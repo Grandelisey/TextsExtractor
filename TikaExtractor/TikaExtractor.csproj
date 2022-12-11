@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>dotnet-TikaExtractor-C1690E43-5CEF-48A4-B36F-EB445FBE575F</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+        <PackageReference Include="NLog" Version="5.1.0" />
+        <PackageReference Include="NLog.Extensions.Logging" Version="5.2.0" />
+        <PackageReference Include="NLog.Schema" Version="5.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="C:\Users\Elisey\.nuget\packages\nlog.config\4.7.15\contentFiles\any\any\NLog.config" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Root\Output\NET-Microservices-Architecture-for-Containerized-NET-Applications.pdf.json" />
+      <_ContentIncludedByDefault Remove="Root\Output\test.zip.json" />
+      <_ContentIncludedByDefault Remove="Root\Output\yandex_email.zip.json" />
+    </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+﻿version: '3'
+name: tika-extractor
+services:
+  apache-tika:
+    image: apache/tika:latest-full
+    container_name: tika-server
+  extractor:
+    image: tika-extractor:1.0.0
+    container_name: extractor
+    volumes:
+      - ./Root:/app/Root

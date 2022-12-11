@@ -1,0 +1,9 @@
+﻿.git
+.idea
+global.json
+TikaExtractor.sln.DotSettings
+**/Root
+**/Logs
+**/bin
+**/obj
+.dockerignore
