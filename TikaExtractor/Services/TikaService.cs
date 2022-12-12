@@ -14,6 +14,7 @@ public class TikaService
     private readonly string _port;
     private string BaseUri => $"http://{_host}:{_port}";
     private readonly HttpClient _httpClient;
+    private const int HTTP_TIMEOUT_SECONDS = 300;
 
 
     private const string FILE_NAME_META_TAG = "resourceName";
@@ -24,7 +25,10 @@ public class TikaService
         _host = options.Value.Host;
         _port = options.Value.Port;
 
-        _httpClient = new HttpClient();
+        _httpClient = new HttpClient
+        {
+            Timeout = TimeSpan.FromSeconds(HTTP_TIMEOUT_SECONDS)
+        };
     }
 
     public async Task<IAsyncEnumerable<TextFile>> ExtractTextFilesAsync(FileInfo file)
