@@ -7,3 +7,6 @@ TikaExtractor.sln.DotSettings
 **/bin
 **/obj
 .dockerignore
+Dependencies
+DockerImages
+/Scripts
