@@ -14,7 +14,10 @@ public class Worker : BackgroundService
     private const string INPUT_DIRECTORY_NAME = "Input";
     private const string OUTPUT_DIRECTORY_NAME = "Output";
 
-    public Worker(ILogger<Worker> logger, IOptions<DirectoriesOptions> directoryOptions, Extractor extractor)
+    public Worker(
+        ILogger<Worker> logger, 
+        IOptions<DirectoriesOptions> directoryOptions, 
+        Extractor extractor)
     {
         _logger = logger;
         _extractor = extractor;
