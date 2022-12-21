@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TikaExtractor", "TikaExtractor\TikaExtractor.csproj", "{2653A733-FAE1-4034-AA08-959297F45D2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextsExtractor", "TextsExtractor\TextsExtractor.csproj", "{2653A733-FAE1-4034-AA08-959297F45D2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

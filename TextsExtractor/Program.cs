@@ -1,6 +1,8 @@
 using NLog.Extensions.Logging;
-using TikaExtractor.Options;
-using TikaExtractor.Services;
+using TextsExtractor.Options;
+using TextsExtractor.Services;
+using TextsExtractor.Services.Extractor;
+using TextsExtractor.Services.Tika;
 
 var builder = Host.CreateDefaultBuilder(args);
 
@@ -14,8 +16,10 @@ builder.ConfigureServices((hostContext, services) =>
     });
     services.Configure<TikaServerOptions>(hostContext.Configuration.GetSection(TikaServerOptions.TikaServer));
     services.Configure<DirectoriesOptions>(hostContext.Configuration.GetSection(DirectoriesOptions.Directories));
-    services.AddSingleton<TikaHttpClient>();
-    services.AddSingleton<Extractor>();
+
+    services.AddHttpClient<TikaHttpClient>();
+    
+    services.AddSingleton<IExtractor, Extractor>();
     services.AddHostedService<Worker>();
 });
 

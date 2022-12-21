@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace TikaExtractor.Services;
+namespace TextsExtractor.Services;
 
 internal static class FileService
 {

@@ -1,4 +1,4 @@
-﻿namespace TikaExtractor.Options;
+﻿namespace TextsExtractor.Options;
 
 public class DirectoriesOptions
 {

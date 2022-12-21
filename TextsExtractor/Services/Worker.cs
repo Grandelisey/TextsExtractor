@@ -1,12 +1,13 @@
 using Microsoft.Extensions.Options;
-using TikaExtractor.Options;
+using TextsExtractor.Options;
+using TextsExtractor.Services.Extractor;
 
-namespace TikaExtractor.Services;
+namespace TextsExtractor.Services;
 
 public class Worker : BackgroundService
 {
     private readonly ILogger<Worker> _logger;
-    private readonly Extractor _extractor;
+    private readonly IExtractor _extractor;
 
     private string _rootDirectoryPath;
     private string _inputDirectoryPath = String.Empty;
@@ -17,7 +18,7 @@ public class Worker : BackgroundService
     public Worker(
         ILogger<Worker> logger, 
         IOptions<DirectoriesOptions> directoryOptions, 
-        Extractor extractor)
+        IExtractor extractor)
     {
         _logger = logger;
         _extractor = extractor;
@@ -56,7 +57,7 @@ public class Worker : BackgroundService
             {   
                 _logger.LogInformation("Start extracting file: {FileName}", file.Name);
                 
-                await _extractor.ExtractSingleJsonFile(file, _outputDirectoryPath).ConfigureAwait(false);
+                await _extractor.ExtractJsonAsync(file, _outputDirectoryPath).ConfigureAwait(false);
                 
                 _logger.LogInformation("Finish extracting file: {FileName}", file.Name);
                     

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace TikaExtractor.Extensions;
+namespace TextsExtractor.Extensions;
 
 public static class JsonExtensions
 {
